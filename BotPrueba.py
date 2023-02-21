@@ -5,11 +5,11 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
 url = "https://www.pccomponentes.com/asus-geforce-gtx-1050-tis-4gb-gddr5"
-url_coolmod = "https://www.pccomponentes.com/asus-geforce-gtx-1050-tis-4gb-gddr5"
 url_coolmod = "https://articulo.mercadolibre.com.ve/MLV-718947014-carro-de-perros-caliente-y-hamburguesas-_JM#position=6&search_layout=stack&type=item&tracking_id=99e36af4-229a-42f8-88e4-5cca200a0bd7"
 
 session = HTMLSession()
 
+#no se ejecuta
 def aviso_facil():
     while True:
         r = session.get(url)
@@ -31,14 +31,6 @@ def entrar_y_verificar():
     return found
 
 
-def popup(driver):
-    # Esto es por si vuelve a salir la silla razer
-    try:
-        driver.find_element_by_class_name("confirm").click()
-    except NoSuchElementException:
-        print("No habia silla razer")
-
-
 def iniciar_sesion(driver):
     form = None
     """is_form_loaded = False
@@ -55,6 +47,8 @@ def iniciar_sesion(driver):
     sleep(2)
 
     driver.find_element(By.CLASS_NAME, value="andes-button__content").click()
+
+    """Hay Captcha, no se como resolverlo"""
 
 
 def iniciar_compra(found):
