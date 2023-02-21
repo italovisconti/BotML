@@ -54,7 +54,7 @@ def iniciar_sesion(driver):
     email.send_keys("Prueba@hotmail.com")
     sleep(2)
 
-    driver.find_element_by_class_name("login100-form-btn").click()
+    driver.find_element(By.CLASS_NAME, value="andes-button__content").click()
 
 
 def iniciar_compra(found):
